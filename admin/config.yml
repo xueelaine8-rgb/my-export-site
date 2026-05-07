@@ -1,6 +1,7 @@
 backend:
   name: github
-  repo: 你的GitHub用户名/你的仓库名
+  repo: xueelaine8-rgb/my-export-site
+  branch: main
 
 media_folder: "images"
 public_folder: "/images"
