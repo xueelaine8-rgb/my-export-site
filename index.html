@@ -1,41 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Export Company</title>
-<meta name="description" content="Factory Direct Export Supplier">
+<meta name="description" content="Professional Export Manufacturer">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- 轮播横幅 -->
 <div class="banner">
-  <h1>Professional Export Supplier</h1>
-  <p>OEM | Factory Price | Global Shipping</p>
+  <div class="slide active">Factory Direct Price</div>
+  <div class="slide">OEM Manufacturing</div>
+  <div class="slide">Global Shipping</div>
 </div>
 
+<!-- 产品区 -->
 <section class="products">
   <h2>Products</h2>
 
   <div class="grid">
 
     <div class="card">
-      <img src="images/product1.jpg">
+      <img src="images/product1.jpg" onclick="openImg(this.src)">
       <p>Product 1</p>
     </div>
 
     <div class="card">
-      <img src="images/product2.jpg">
+      <img src="images/product2.jpg" onclick="openImg(this.src)">
       <p>Product 2</p>
     </div>
 
   </div>
 </section>
 
+<!-- 关于我们 -->
 <section class="about">
   <h2>About Us</h2>
   <p>We are a professional export manufacturer providing high quality products worldwide.</p>
 </section>
+
+<!-- 图片放大弹窗 -->
+<div id="modal" onclick="closeImg()">
+  <img id="modalImg">
+</div>
+
+<!-- JS功能 -->
+<script>
+function openImg(src){
+  document.getElementById('modal').style.display = 'flex';
+  document.getElementById('modalImg').src = src;
+}
+
+function closeImg(){
+  document.getElementById('modal').style.display = 'none';
+}
+
+// 轮播
+let index = 0;
+let slides = document.querySelectorAll(".slide");
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 2000);
+</script>
 
 </body>
 </html>
