@@ -597,7 +597,7 @@ nav a:hover{
 .certificate-grid{
 
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
     gap:20px;
 }
 
@@ -612,7 +612,7 @@ nav a:hover{
 .detail-gallery{
 
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:1fr;
     gap:20px;
 }
 
