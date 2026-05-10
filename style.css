@@ -35,7 +35,7 @@ nav a{
     color:white;
     text-decoration:none;
     margin-left:30px;
-    transition:0.3s;
+    transition:0.5s;
 }
 
 nav a:hover{
@@ -58,7 +58,7 @@ nav a:hover{
 
 .banner-container{
     width:88%;
-    aspect-ratio:16/5;
+    aspect-ratio:16/8;
     position:relative;
     overflow:hidden;
     border-radius:14px;
@@ -70,7 +70,7 @@ nav a:hover{
     position:absolute;
     inset:0;
     opacity:0;
-    transition:1s;
+    transition:5s;
 }
 
 .banner-slide.active{
