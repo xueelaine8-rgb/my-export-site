@@ -58,7 +58,7 @@ nav a:hover{
 
 .banner-container{
     width:88%;
-    aspect-ratio:16/9;
+    aspect-ratio:16/5;
     position:relative;
     overflow:hidden;
     border-radius:14px;
