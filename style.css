@@ -684,7 +684,7 @@ nav a:hover{
 /* LEFT IMAGE */
 
 .slide-left{
-    width:55%;
+    width:70%;
 }
 
 .slide-left img{
@@ -696,9 +696,9 @@ nav a:hover{
 /* RIGHT PANEL */
 
 .slide-right{
-    width:45%;
-    background:#0a2a5e;
-    color:white;
+    width:30%;
+    background:white;
+    color:#111;
     padding:80px 60px;
     display:flex;
     flex-direction:column;
