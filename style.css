@@ -836,3 +836,87 @@ nav a:hover{
     color: #fff;
     cursor: pointer;
 }
+/* ===== FOOTER整体 ===== */
+.site-footer {
+    background: #FFF9E6; /* 浅黄色 */
+    color: #333;
+    padding: 50px 10%;
+    margin-top: 60px;
+}
+
+/* ===== 上部分：三列联系方式 ===== */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-item {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.footer-item .icon {
+    font-size: 26px;
+}
+
+.footer-item h4 {
+    margin: 0;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.footer-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===== 导航栏 ===== */
+.footer-nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.footer-nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== 底部版权 ===== */
+.footer-bottom {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 15px;
+}
+
+/* ===== 手机适配 ===== */
+@media (max-width: 768px) {
+
+    .footer-top {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-item {
+        justify-content: flex-start;
+    }
+
+    .footer-nav a {
+        display: inline-block;
+        margin: 8px 10px;
+    }
+}
