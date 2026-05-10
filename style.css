@@ -222,18 +222,7 @@ nav a:hover{
     line-height:1.6;
 }
 
-/* CONTACT */
 
-.contact{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:80px 20px;
-}
-
-.contact p{
-    margin-top:15px;
-}
 /* PRODUCT PAGE */
 
 .product-page{
@@ -711,124 +700,6 @@ nav a:hover{
     .detail-gallery{
 
         grid-template-columns:repeat(2,1fr);
-    }
-
-}
-/* HERO SLIDER */
-
-.hero-slider{
-    width:100%;
-    height:100vh;
-    overflow:hidden;
-    position:relative;
-}
-
-/* SLIDE */
-
-.slide{
-    display:none;
-    width:100%;
-    height:100%;
-    display:flex;
-}
-
-.slide.active{
-    display:flex;
-}
-
-/* LEFT IMAGE */
-
-.slide-left{
-    width:70%;
-}
-
-.slide-left img{
-    width:100%;
-    height:100vh;
-    object-fit:cover;
-}
-
-/* RIGHT PANEL */
-
-.slide-right{
-    width:30%;
-    background:white;
-    color:#111;
-    padding:80px 60px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.slide-right h1{
-    font-size:44px;
-    margin-bottom:15px;
-}
-
-.location{
-    font-size:18px;
-    opacity:0.9;
-}
-
-.slogan{
-    font-size:24px;
-    margin-top:20px;
-}
-
-.sub{
-    margin-top:10px;
-    opacity:0.8;
-}
-
-/* STATS */
-
-.stats{
-    display:flex;
-    justify-content:space-between;
-    margin-top:40px;
-}
-
-.stats div{
-    text-align:center;
-}
-
-.stats h3{
-    font-size:26px;
-    color:#fff;
-}
-
-.stats p{
-    font-size:14px;
-    opacity:0.8;
-}
-
-/* BUTTON */
-
-.learn-btn{
-    margin-top:50px;
-    background:#1e90ff;
-    color:white;
-    padding:14px 28px;
-    text-decoration:none;
-    width:fit-content;
-    border-radius:6px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-    .slide{
-        flex-direction:column;
-    }
-
-    .slide-left,
-    .slide-right{
-        width:100%;
-    }
-
-    .slide-left img{
-        height:40vh;
     }
 
 }
