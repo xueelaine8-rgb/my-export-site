@@ -1,3 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    /* ⭐ 背景图 */
+    background-image: url("images/background.jpg");
+
+    /* ⭐ 关键：固定背景 */
+    background-attachment: fixed;
+
+    /* ⭐ 覆盖全屏 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* ⭐ 保证内容可读性 */
+    color: #333;
+}
 *{
     margin:0;
     padding:0;
