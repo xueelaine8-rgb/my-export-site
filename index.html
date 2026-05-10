@@ -28,29 +28,25 @@
     </header>
 
 <!-- HERO BANNER -->
-
 <section class="hero-banner">
-
     <button class="banner-arrow left">&#10094;</button>
 
     <div class="banner-container">
-
-        <div class="banner-slide active">
-            <img src="images/banner1.jpg">
+        <!-- 🔥 必须加这个轨道 div，所有轮播图放里面 -->
+        <div class="banner-track">
+            <div class="banner-slide">
+                <img src="images/banner1.jpg">
+            </div>
+            <div class="banner-slide">
+                <img src="images/banner2.jpg">
+            </div>
+            <div class="banner-slide">
+                <img src="images/banner3.jpg">
+            </div>
         </div>
-
-        <div class="banner-slide">
-            <img src="images/banner2.jpg">
-        </div>
-
-        <div class="banner-slide">
-            <img src="images/banner3.jpg">
-        </div>
-
     </div>
 
     <button class="banner-arrow right">&#10095;</button>
-
 </section>
 
     <!-- ABOUT -->
@@ -195,39 +191,67 @@
 
 </div>
 <script>
+const track = document.querySelector('.banner-track');
+const slides = document.querySelectorAll('.banner-slide');
+const leftBtn = document.querySelector('.left');
+const rightBtn = document.querySelector('.right');
 
-let slides = document.querySelectorAll(".banner-slide");
-let current = 0;
+let currentIndex = 0;
+const slideWidth = slides[0].clientWidth;
+const slideCount = slides.length;
 
-/* 显示指定图片 */
-function showSlide(index){
-    slides.forEach(s => s.classList.remove("active"));
-    slides[index].classList.add("active");
+// 无缝核心：复制第一张放到最后，实现循环不跳变
+track.appendChild(slides[0].cloneNode(true));
+
+// 更新滑动位置
+function updateSlide() {
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
-/* 下一张 */
-function nextSlide(){
-    current = (current + 1) % slides.length;
-    showSlide(current);
-}
+// 右箭头（一直向右，无缝）
+rightBtn.addEventListener('click', () => {
+    if (currentIndex === slideCount) {
+        // 瞬间回到第0张（无动画，肉眼看不见）
+        track.style.transition = 'none';
+        currentIndex = 0;
+        updateSlide();
+        
+        // 触发重排后继续动画
+        void track.offsetWidth;
+        track.style.transition = 'transform 0.8s ease';
+    }
 
-/* 上一张 */
-function prevSlide(){
-    current = (current - 1 + slides.length) % slides.length;
-    showSlide(current);
-}
+    currentIndex++;
+    updateSlide();
+});
 
-/* 自动轮播（8秒） */
-setInterval(nextSlide, 8000);
+// 左箭头
+leftBtn.addEventListener('click', () => {
+    if (currentIndex === 0) {
+        track.style.transition = 'none';
+        currentIndex = slideCount;
+        updateSlide();
+        
+        void track.offsetWidth;
+        track.style.transition = 'transform 0.8s ease';
+    }
 
-/* 等页面加载完再绑定按钮 */
-window.onload = function(){
+    currentIndex--;
+    updateSlide();
+});
 
-    document.querySelector(".right").onclick = nextSlide;
-    document.querySelector(".left").onclick = prevSlide;
-
-};
-
+// 自动轮播（8秒自动向右滑）
+setInterval(() => {
+    if (currentIndex === slideCount) {
+        track.style.transition = 'none';
+        currentIndex = 0;
+        updateSlide();
+        void track.offsetWidth;
+        track.style.transition = 'transform 0.8s ease';
+    }
+    currentIndex++;
+    updateSlide();
+}, 8000);
 </script>
 
 </body>
