@@ -725,33 +725,45 @@ nav a:hover{
     0%{ left:-50%; }
     100%{ left:100%; }
 }
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+}
 .company-carousel-section {
     padding: 60px 0;
     background: #fff;
 }
 
-/* 轮播容器 */
+/* ⭐ 和你banner一样的留白结构 */
 .carousel-container {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;   /* 左右留白关键 */
     overflow: hidden;
     padding: 20px 0;
 }
 
-/* 轨道 */
+/* ⭐ 真正无缝滚动轨道 */
 .carousel-track {
     display: flex;
-    gap: 20px;
     width: max-content;
+    gap: 25px;
     animation: scroll 25s linear infinite;
 }
 
-/* 图片 */
+/* ⭐ 图片变大 + 不裁切 */
 .carousel-item {
-    width: 260px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
+    width: 360px;      /* 🔥 更大 */
+    height: 240px;     /* 🔥 更长 */
+    object-fit: contain; /* ⭐关键：完整显示不裁切 */
+    background: #f5f5f5;
+    border-radius: 14px;
     cursor: pointer;
+    flex-shrink: 0;
     transition: transform 0.3s;
 }
 
@@ -759,20 +771,21 @@ nav a:hover{
     transform: scale(1.05);
 }
 
-/* 无缝滚动 */
+/* ⭐ 真·无缝滚动（重点修复空白问题） */
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
-/* 放大层 */
+/* 放大层保持不变 */
 .lightbox {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0,0,0,0.85);
     justify-content: center;
     align-items: center;
@@ -781,7 +794,7 @@ nav a:hover{
 
 .lightbox img {
     max-width: 90%;
-    max-height: 80%;
+    max-height: 85%;
     border-radius: 10px;
 }
 
