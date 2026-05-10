@@ -279,7 +279,6 @@ setInterval(() => {
 }, 8000);
 </script>
 <script>
-// ===== 公司轮播（独立，不影响banner） =====
 const track = document.querySelector('.carousel-track');
 const container = document.getElementById('carousel');
 
@@ -287,10 +286,10 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const closeBtn = document.getElementById('closeBtn');
 
-// 复制一份实现无缝
+/* ⭐ 复制内容实现真正无缝 */
 track.innerHTML += track.innerHTML;
 
-// hover暂停
+/* ⭐ hover暂停 */
 container.addEventListener('mouseenter', () => {
     track.style.animationPlayState = 'paused';
 });
@@ -299,7 +298,7 @@ container.addEventListener('mouseleave', () => {
     track.style.animationPlayState = 'running';
 });
 
-// 触摸暂停
+/* ⭐ 触摸暂停 */
 container.addEventListener('touchstart', () => {
     track.style.animationPlayState = 'paused';
 });
@@ -308,7 +307,7 @@ container.addEventListener('touchend', () => {
     track.style.animationPlayState = 'running';
 });
 
-// 点击放大
+/* ⭐ 点击放大 */
 document.querySelectorAll('.carousel-item').forEach(img => {
     img.addEventListener('click', () => {
         lightbox.style.display = 'flex';
@@ -316,7 +315,7 @@ document.querySelectorAll('.carousel-item').forEach(img => {
     });
 });
 
-// 关闭
+/* ⭐ 关闭 */
 closeBtn.onclick = () => {
     lightbox.style.display = 'none';
 };
