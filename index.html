@@ -213,19 +213,22 @@ function nextSlide(){
     current = (current + 1) % slides.length;
 
     showSlide(current);
+
 }
 
 setInterval(nextSlide, 5000);
 
-/* BUTTONS */
+/* RIGHT BUTTON */
 
-document.querySelector(".next").onclick = () => {
+document.querySelector(".right").onclick = () => {
 
     nextSlide();
 
 };
 
-document.querySelector(".prev").onclick = () => {
+/* LEFT BUTTON */
+
+document.querySelector(".left").onclick = () => {
 
     current = (current - 1 + slides.length) % slides.length;
 
