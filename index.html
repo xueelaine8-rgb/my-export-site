@@ -196,43 +196,34 @@
 <script>
 
 let slides = document.querySelectorAll(".banner-slide");
-
 let current = 0;
 
+/* 显示指定图片 */
 function showSlide(index){
-
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
-
+    slides.forEach(s => s.classList.remove("active"));
     slides[index].classList.add("active");
 }
 
+/* 下一张 */
 function nextSlide(){
-
     current = (current + 1) % slides.length;
-
     showSlide(current);
-
 }
 
-setInterval(nextSlide, 5000);
-
-/* RIGHT BUTTON */
-
-document.querySelector(".right").onclick = () => {
-
-    nextSlide();
-
-};
-
-/* LEFT BUTTON */
-
-document.querySelector(".left").onclick = () => {
-
+/* 上一张 */
+function prevSlide(){
     current = (current - 1 + slides.length) % slides.length;
-
     showSlide(current);
+}
+
+/* 自动轮播（8秒） */
+setInterval(nextSlide, 8000);
+
+/* 等页面加载完再绑定按钮 */
+window.onload = function(){
+
+    document.querySelector(".right").onclick = nextSlide;
+    document.querySelector(".left").onclick = prevSlide;
 
 };
 
