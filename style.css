@@ -41,39 +41,94 @@ nav a{
 nav a:hover{
     color:#ddd;
 }
+/* HERO BANNER */
 
-/* HERO */
-
-.hero{
+.hero-banner{
     width:100%;
     height:100vh;
-    background:url("images/banner.jpg") center/cover no-repeat;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+    background:white;
+    position:relative;
+    overflow:hidden;
 }
 
-.hero-overlay{
-    text-align:center;
-    color:white;
-    background:rgba(0,0,0,0.45);
-    padding:40px;
-    border-radius:10px;
+/* CENTER CONTAINER */
+
+.banner-container{
+    width:88%;
+    aspect-ratio:16/9;
+    position:relative;
+    overflow:hidden;
+    border-radius:14px;
 }
 
-.hero-overlay h1{
-    font-size:52px;
-    margin-bottom:15px;
+/* EACH BANNER */
+
+.banner-slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:1s;
 }
 
-.hero-overlay p{
-    font-size:22px;
-    margin-bottom:15px;
+.banner-slide.active{
+    opacity:1;
+    z-index:2;
 }
 
-.hero-overlay h2{
-    font-size:32px;
-    margin-bottom:10px;
+/* IMAGE */
+
+.banner-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* ARROWS */
+
+.banner-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    cursor:pointer;
+    font-size:28px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    z-index:10;
+}
+
+/* LEFT */
+
+.left{
+    left:30px;
+}
+
+/* RIGHT */
+
+.right{
+    right:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .banner-container{
+        width:95%;
+    }
+
+    .banner-arrow{
+        width:45px;
+        height:45px;
+    }
+
 }
 
 /* SECTION */
